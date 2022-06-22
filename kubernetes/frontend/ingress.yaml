@@ -23,7 +23,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: backend-api-1-svc
+            name: backend-api-1-svc.api-1
             port: 
               number: 80
       - path: /
