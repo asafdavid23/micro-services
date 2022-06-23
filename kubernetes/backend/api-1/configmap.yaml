@@ -6,5 +6,5 @@ kind: ConfigMap
 metadata:
   creationTimestamp: null
   name: api1-config
-  label:
+  labels:
     app: api1
