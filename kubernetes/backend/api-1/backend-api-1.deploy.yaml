@@ -20,19 +20,13 @@ spec:
     spec:
       containers:
       - name: backend-api-1-pods
-
-        image: k3d-registry:51924/microservice-example-1/backend-api1:latest
+        image: asafdavid23/backend-api-1:v1.0.0
         imagePullPolicy: Always
-
         ports:
         - containerPort: 3010
-
-        env:
-        - name: SERVICE_API2_ENDPOINT
-          value: http://backend-api-2-svc:80/api
-        - name: PORT
-          value: "3010"
-
+        envFrom:
+          - configMapKeyRef:
+              name: api1-config
         livenessProbe:
           httpGet:
             path: /api/health
